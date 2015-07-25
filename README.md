@@ -102,7 +102,7 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 &lt;/body&gt;
 </pre>
 
-*The intention of the application is expressed or **declared** in the HTML for AngularJS.*
+*The intention of the application is expressed or __declared__ in the HTML for AngularJS.*
 
 ---
 
