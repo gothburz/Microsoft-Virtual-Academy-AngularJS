@@ -80,25 +80,25 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 
 <pre class="prettyprint">
 &lt;body ng-app="spicyApp2"&gt;
-&lt;div ng-controller="SpicyController"&gt;
-&lt;input ng-model="customSpice"&gt;
-&lt;button ng-click="spicy('chili')"&gt;Chili&lt;/button&gt;
-&lt;button ng-click="spicy(customSpice)"&gt;Custom Spice&lt;/button&gt;
-&lt;p>The food is {{spice}} spicy!&lt;/p&gt;
-&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div ng-controller="SpicyController"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input ng-model="customSpice"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button ng-click="spicy('chili')"&gt;Chili&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button ng-click="spicy(customSpice)"&gt;Custom Spice&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>The food is {{spice}} spicy!&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
 &lt;/body&gt;
 </pre>
 
 **jQuery**
 
-```<body>```
-&nbsp;&nbsp;&nbsp;```<div>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<input>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<button>Chili</button>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<button>Custom Spice</button>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<p>The food is spicy!</p>```
-&nbsp;&nbsp;&nbsp;```</div>```
-```</body>```
+&lt;body ng-app="spicyApp2"&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button &gt;Chili&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&gt;Custom Spice&lt;/button&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>The food is spicy!&lt;/p&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/body&gt;
 
 *The intention of the application is expressed or **declared** in the HTML for AngularJS.*
 
