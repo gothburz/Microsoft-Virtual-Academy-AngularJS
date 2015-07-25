@@ -70,7 +70,8 @@ _The acronym **CRUD** refers to all of the major functions that are implemented 
 
 
 ###Declarative Programming
-_In computer science, **declarative programming** is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow. _
+
+In computer science, **declarative programming** is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow. _
 
 - See [declarative programming](https://en.wikipedia.org/wiki/Declarative_programming) for more info.
 
