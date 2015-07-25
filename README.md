@@ -52,7 +52,7 @@ What is CRUD?
  - Delete
 
 _In computer programming **CRUD** refers to the four basic types of **persistent** storage_.
-​
+<br>
 **Persistence**: _In computer science **persistence** refers to the characteristic of state that outlives the process that created it._ 
 
 - See [persistence (computer science)](https://en.wikipedia.org/wiki/Persistence_(computer_science)) for more info.
