@@ -62,11 +62,11 @@ _In computer programming **CRUD** refers to the four basic types of **persistent
 _The acronym **CRUD** refers to all of the major functions that are implemented in relational database applications. Each letter in the acronym can map to a standard SQL statement, HTTP method or DDS operation:_
 ​
 | **Operation** | **SQL** | **HTTP** | **DDS** |
-|---------------|---------|----------|---------|
-|Create         |Insert   | Put/Post |  Write  |
-|Read (Retrive) |Select   | Get      |  Read/Take |
-|Update (Modify)| Update  | Put/Patch|  Write      |
-|Delete (Destroy)| Delete | Delete   |  Dispose    |
+| --------------- | --------- | ---------- | --------- |
+| Create         |Insert   | Put/Post |  Write  |
+| Read (Retrive) |Select   | Get      |  Read/Take |
+| Update (Modify) | Update  | Put/Patch |  Write      |
+| Delete (Destroy) | Delete | Delete   |  Dispose    |
 
 ###Declarative Programming
 _In computer science, **declarative programming** is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow. _
