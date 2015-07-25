@@ -91,6 +91,7 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 
 **jQuery**
 
+<pre class="prettyprint">
 &lt;body ng-app="spicyApp2"&gt;
 &nbsp;&nbsp;&nbsp;&lt;div&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&gt;
@@ -99,6 +100,7 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>The food is spicy!&lt;/p&gt;
 &nbsp;&nbsp;&nbsp;&lt;/div&gt;
 &lt;/body&gt;
+</pre>
 
 *The intention of the application is expressed or **declared** in the HTML for AngularJS.*
 
