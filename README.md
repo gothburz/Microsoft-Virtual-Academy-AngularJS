@@ -78,14 +78,16 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 
 **AngularJS**
 
-```<body ng-app = "spicyApp2">```
-&nbsp;&nbsp;&nbsp;```<div ng-controller = "SpicyController">```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<input ng-model="customSpice">```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<button ng-click="spicy('chili')">Chili</button>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<button ng-click="spicy(customSpice)">Custom Spice</button>```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```<p>The food is {{spice}} spicy!</p>```
-&nbsp;&nbsp;&nbsp;```</div>```
-```</body>```
+<pre class="prettyprint">
+&lt;body ng-app="spicyApp2"&gt;
+&lt;div ng-controller="SpicyController"&gt;
+&lt;input ng-model="customSpice"&gt;
+&lt;button ng-click="spicy('chili')"&gt;Chili&lt;/button&gt;
+&lt;button ng-click="spicy(customSpice)"&gt;Custom Spice&lt;/button&gt;
+&lt;p>The food is {{spice}} spicy!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</pre>
 
 **jQuery**
 
