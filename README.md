@@ -291,6 +291,7 @@ angular.module('mainApp', [])
         &lt;/div&gt;
         <!-- /.container -->
     &lt;/nav&gt;
+    &lt;/body"&gt;
 </pre>
 
 **Module mainAPP:**
