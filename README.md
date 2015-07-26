@@ -355,6 +355,6 @@ angular.module('eventModule', [])
    &nbsp;&lt;a href="{{menu[1].href}}"&gt;{{menu[1].name}}&lt;/a&gt;</pre>
 	   - {{menu}} is bound to array **$scope.menu** also found within **EventCtrl**.
  
- *These bound items will display the information found in our **eventModule** to the browser view, in this example on the navbar specifically*.
+ _These bound items will display the information found in our **eventModule** to the browser view, in this example on the navbar specifically._
 
 You can see from this example the power of AngularJS. To do this maneuver with jQuery for example would take lots and lots of code! 
