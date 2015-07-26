@@ -9,7 +9,7 @@ Check out the entire MVA course!
 [Microsoft Training Course on AngularJS](http://www.microsoftvirtualacademy.com/training-courses/introduction-to-angularjs)  
 [Github Demo and Course Files](https://github.com/MicrosoftLearning/MVAAngular)
 
-Feel free to fork, modify, and share these along your own programming learning journey.
+Feel free to fork, modify, and share these along your own programming learning journey. Most importantly have fun with it!
 
 Cheers,
 
