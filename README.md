@@ -451,7 +451,8 @@ if  you're wondering what the question mark is in: <pre>ng-class="(index===0) ? 
 It's just a shorthand **if/else** statement that in computer science is called a [ternary operator](https://en.wikipedia.org/wiki/%3F:). 
 <br>
 
-**if**<pre>(index===0) {'active'}</pre> change class to active. 
+**if**<pre>(index===0) {'active'
+}</pre> change class to active. 
 <br>
 
 **else**<pre>''"</pre> do nothing.
