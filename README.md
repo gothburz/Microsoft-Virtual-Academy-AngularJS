@@ -19,7 +19,7 @@ Petrus Rex
 ##What is AngularJS?
 
 
-- Front End JavaScript framework for creating web applications.
+- Front End JavaScript framework for creating dynamic web applications.
 - Open source and maintained by Google.
 	- Initial release 2009.
 	- Stable release 1.4.3 / July 15, 2015.
