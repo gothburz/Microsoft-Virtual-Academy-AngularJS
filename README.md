@@ -16,7 +16,7 @@ Cheers,
 Petrus Rex
 
 
-##What is AngularJS
+##What is AngularJS?
 
 
 - Front End JavaScript framework for creating web applications.
