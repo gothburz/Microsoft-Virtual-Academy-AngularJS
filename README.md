@@ -364,3 +364,89 @@ In the big picture the **view** is what the user sees, you can take that a step 
 ![MVC](http://mnikoo.files.wordpress.com/2010/07/slide2_thumb2.png?w=980&h=740)<br>
 ####Still Lost? Take a moment to relook at [Model–view–controller(MVC)](http://www.tomdalling.com/blog/software-design/model-view-controller-explained/).
 
+###Adding Behavior
+
+Once again we *stored* data properties on the **scope** object within the **controller**. You can also add behavior by adding functions, properties, or WHATEVER. 
+
+<pre>
+&lt;body ng-app="mainApp"&gt;
+    <!-- Navigation -->
+    &lt;nav ng-controller="EventCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+            <!-- Brand and toggle get grouped for better mobile display -->
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+                    &lt;span class="sr-only">Toggle navigation&lt;/span>
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;a class="navbar-brand" href="#"&gt;{{title}}&lt;/a&gt;
+            &lt;/div&gt;
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li ng-click="setIndex(0)" ng-class="(index===0) ? 'active' : ''">
+                        &lt;a href="{{menu[0].href}}"&gt;{{menu[0].name}}&lt;/a&gt;
+                    &lt;/li>
+                    &lt;li  ng-click="setIndex(1)"  ng-class="(index===1) ? 'active' : ''">
+                        &lt;a href="{{menu[1].href}}"&gt;{{menu[1].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt; 
+            <!-- /.navbar-collapse -->
+        &lt;/div&gt;
+        <!-- /.container -->
+    &lt;/nav&gt;
+    &lt;/body"&gt;
+</pre>
+<pre>
+(function(){
+
+angular.module('eventModule', [])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', function ($scope) {
+	$scope.title = "Young Game Maker";
+
+	$scope.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	$scope.index = 0;
+
+	$scope.setIndex=function(val)
+	{
+		$scope.index = val;
+		
+	}
+
+	$scope.getIndex=function(){
+		return($scope.index);
+	}
+}])
+
+})();</pre>
+
+-	Above we passed two dummy functions to demonstrate adding behavior to AngularJS.
+-	We added the **ng-click** directive to *listen* for user clicks.
+-	We then added the **ng-class** directive to *change* the class when the user *clicks* a menu item to active using [Bootstraps](http://getbootstrap.com/) active class.
+-	We did the same thing that JavaScripts **addEventListener()**  or jQuerys **click()** method does but in a much simpler and efficient manner.
+-	Remember **Declarative Programming**? The intention of the application is  **declared** in the HTML for AngularJS.
+-	Love Angular yet?
+
+####SideNote
+if  you're wondering what the question mark is in: <pre>ng-class="(index===0) ? 'active' : ''"</pre> <br>
+It's just a shorthand **if/else** statement that in computer science is called a [ternary operator](https://en.wikipedia.org/wiki/%3F:). <br>Where **if **<pre>(index===0)</pre> change class to active. <br>**else**<pre>''"</pre> do nothing.
+
