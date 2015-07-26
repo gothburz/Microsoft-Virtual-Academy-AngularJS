@@ -4,7 +4,7 @@ These are my personal notes taken from the [Microsoft Virtual Academy](http://ww
 
 Notes taken using [StackEdit](https://stackedit.io/) - Full-featured, open-source Markdown editor.
 
-Check out the entire MVA course!
+Check out the entire MVA course for yourself!
 
 [Microsoft Training Course on AngularJS](http://www.microsoftvirtualacademy.com/training-courses/introduction-to-angularjs)  
 [Github Demo and Course Files](https://github.com/MicrosoftLearning/MVAAngular)
