@@ -360,4 +360,5 @@ angular.module('eventModule', [])
 If for example you change **$scope-title** in your JS file you can truly can see the power of AngularJS in that when you change information in the **controller** the **view** will update as well. To do this maneuver with jQuery alone for example would take take tons of lines of code!
 
 ![MVC](http://mnikoo.files.wordpress.com/2010/07/slide2_thumb2.png?w=980&h=740)<br>
-####Still Lost? Take a moment to relook at [Model–view–controller(MVC)](http://www.tomdalling.com/blog/software-design/model-view-controller-explained/).
+####Still Lost? Take a moment to relook at [Model–view–controller(MVC)](http://www.tomdalling.com/blog/software-design/model-view-controller-explained/).<br>
+In the big picture the view is the browser and what the user sees. You can take that a step further and break that up by elements on your webpage. In the above example we were working with the navbar that's a view and had its own controller, you can create a controller to control the view of a footer, an image, etc.
