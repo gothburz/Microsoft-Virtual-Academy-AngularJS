@@ -1,6 +1,6 @@
 # Microsoft Virtual Academy - AngularJS 
 
-These are my personal notes taken from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/) on AngularJS. These notes also include definitions from core principles in computer science needed to understand what is happening --*under the hood*  of Angular and computer programming in general, leading to a better understanding of *how, why, & what* is happening. Also included are links that further expand on these topics with resources to further understand them.
+These are my personal notes taken from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/) course on AngularJS. These notes also include expanded definitions, core principles of computer science and programming to understand what is happening --*under the hood*  of Angular, leading to a much better understanding of the *how, why, & what*. I have also included specific links to the API in relevant situations.
 
 Notes taken using [StackEdit](https://stackedit.io/) - Full-featured, open-source Markdown editor.
 
