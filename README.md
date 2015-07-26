@@ -357,4 +357,4 @@ angular.module('eventModule', [])
  
  _These bound items will display the information found in our **eventModule** to the browser view, in this example on the navbar specifically._
 
-You can see from this example the power of AngularJS. To do this maneuver with jQuery for example would take lots and lots of code! 
+If for example you change **$scope-title** in your JS file you can truly can see the power of AngularJS in that when you change information in the **controller** the **view** will update as well as a result. To do this maneuver with jQuery alone for example would take take tons of lines of code! 
