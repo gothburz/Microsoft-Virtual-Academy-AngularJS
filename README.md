@@ -146,7 +146,7 @@ Check out [Understanding dependency injection](https://github.com/angular/angula
 
 ###Two-Way Data Binding
 
-*Remember Model-View-Controller (MVC?)*
+*Remember Model-View-Controller (MVC)?*
 
 In AngularJS the **view** (what the user sees) and **model** (data) is intertwined (bound together), the model or *data* is accessed by the **controller**.  In terms of AngularJS think of the view as a reflection of the current model state. This is highly efficient and powerful!
 
