@@ -249,3 +249,111 @@ angular.module('mainApp', [])
  - Avoid using to manipulate the DOM
 
 ##Creating a Controller
+
+- Requires **ng-controller** directive
+- Add controller code to module
+- Controllers are named using upper CamelCase
+- Name your controller based on functionality E.g. (NavCtrl)
+- Keep controllers lean & organized
+- you can have multiple controllers on a page
+- you can nest controllers within controllers.
+
+###Example Controller:
+
+**HTML:**
+<pre>
+&lt;body ng-app="mainApp"&gt;
+    <!-- Navigation -->
+    &lt;nav ng-controller="EventCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+            <!-- Brand and toggle get grouped for better mobile display -->
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+                    &lt;span class="sr-only">Toggle navigation&lt;/span>
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;a class="navbar-brand" href="#"&gt;{{title}}&lt;/a&gt;
+            &lt;/div&gt;
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li class="active">
+                        &lt;a href="{{menu[0].href}}"&gt;{{menu[0].name}}&lt;/a&gt;
+                    &lt;/li>
+                    &lt;li>
+                        &lt;a href="{{menu[1].href}}"&gt;{{menu[1].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt; 
+            <!-- /.navbar-collapse -->
+        &lt;/div&gt;
+        <!-- /.container -->
+    &lt;/nav&gt;
+</pre>
+
+**Module mainAPP:**
+
+<pre>
+/*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
+/*added the second module as a dependancy */
+
+angular.module('mainApp', ['eventModule'])
+.config([function () {
+	/* Configuration is where you configure providers ( not instances)*/
+	console.log("Configuration hook")
+}])
+.run([function () {
+	/* Run is when the app gets kicked off*/
+	console.log("Run hook");
+}])
+</pre>
+
+ - Notice that we passed eventModule as a dependancy of mainApp!
+
+<br>
+**Module eventModule:**
+
+<pre>
+
+(function(){
+
+angular.module('eventModule', [])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', function ($scope) {
+	$scope.title = "Young Game Maker";
+	$scope.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+}])
+
+})();
+</pre>
+
+ - In the module **eventModule** we created the controller **EventCtrl**.
+ - Go back up to the **HTML** document and see that **EventCtrl** is bound to the **&lt;nav&gt;** tag 
+	 - Any element operating inside<br><pre>&lt;nav ng-controller="EventCtrl"&gt;&lt;/nav&gt;</pre> is functioning within the *scope* of **EventCtrl**.
+ - Think of **scope** as the *area of operation*.
+ - Look at the **data-binding** within the **nav** tag: <pre>&lt;a class="navbar-brand" href="#">{{title}}&gt;</pre>
+	 - {{title}} in the HTML document is bound to **EventCtrl**, we can see in the **eventModule** which contains our controller that **$scope.title** is Young Game Maker.
+
+ - Same here <pre> &lt;a href="{{menu[0].href}}"&gt;{{menu[0].name}}&lt;/a&gt;<br>
+   &nbsp;&lt;a href="{{menu[1].href}}"&gt;{{menu[1].name}}&lt;/a&gt;</pre>
+	   - {{menu}} is bound to array **$scope.menu** also found within **EventCtrl**.
+ 
+ *These bound items will display the information found in our **eventModule** to the browser view, in this example on the navbar specifically*.
+
+You can see from this example the power of AngularJS. To do this maneuver with jQuery for example would take lots and lots of code! 
