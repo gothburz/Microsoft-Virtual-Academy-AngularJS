@@ -107,7 +107,7 @@ In computer science, **declarative programming** is a programming paradigm, a st
 
 ---
 
-##Getting Started - How AngularJS Works
+##Getting Started - How does AngularJS Work?
 
 - AngularJS will initialize when the DOM content is loaded.
 	- Document Object Model (DOM)  is a programming interface for HTML, XML and SVG documents. It provides a structured representation of the document (a tree) and it defines a way that the structure can be accessed from programs so that they can change the document structure, style and content.
@@ -126,7 +126,7 @@ In computer science, **declarative programming** is a programming paradigm, a st
 
 - It will load the module associated with the directive if specified.
 
-### Getting Started - Bootstrap
+### Getting Started - Bootstrapping
 
 ![Bootstrap](https://docs.angularjs.org/img/guide/concepts-startup.png)
 
