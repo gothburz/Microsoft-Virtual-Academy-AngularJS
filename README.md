@@ -25,7 +25,7 @@ Petrus Rex
 	- Stable release 1.4.3 / July 15, 2015.
 
 - MVC pattern (Model-View-Controller<br>
-	-*Model–view–controller(MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.*
+	- *Model–view–controller(MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user.*
 
 Here is an in depth definition of [Model–view–controller(MVC)](http://www.tomdalling.com/blog/software-design/model-view-controller-explained/).
 
