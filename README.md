@@ -51,7 +51,7 @@ What is CRUD?
  - Update 
  - Delete
 
-In computer programming **CRUD** refers to the four basic types of **persistent** storage_.
+_In computer programming **CRUD** refers to the four basic types of **persistent** storage._
 <br>
 **Persistence**: _In computer science **persistence** refers to the characteristic of state that outlives the process that created it._ 
 
@@ -71,7 +71,7 @@ _The acronym **CRUD** refers to all of the major functions that are implemented 
 
 ###Declarative Programming
 
-In computer science, **declarative programming** is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow. _
+_In computer science, **declarative programming** is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow. _
 
 - See [declarative programming](https://en.wikipedia.org/wiki/Declarative_programming) for more info.
 
