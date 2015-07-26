@@ -358,7 +358,7 @@ angular.module('eventModule', [])
  _These bound items will display the information found in our **eventModule** to the browser view, in this example on the navbar specifically._
 
 If for example you change **$scope-title** in your JS file you can truly can see the power of AngularJS in that when you change information in the **controller** the **view** will update as well. To do this maneuver with jQuery alone for example would take take tons of lines of code!<br><br>
-In the big picture the view is the browser and what the user sees, you can take that a step further and break the webpage up into pieces. In the above example we were working with the navbar specifically that's a view and had its own controller, you can create a controller to any number of elements on the page the footer, an image, etc.
+In the big picture the view is what the user sees, you can take that a step further and break the webpage up into pieces. In the above example we were working with the navbar specifically that's a view and had its own controller, you can create a controller to any number of elements on the page the footer, an image, etc.
 
 ![MVC](http://mnikoo.files.wordpress.com/2010/07/slide2_thumb2.png?w=980&h=740)<br>
 ####Still Lost? Take a moment to relook at [Model–view–controller(MVC)](http://www.tomdalling.com/blog/software-design/model-view-controller-explained/).
