@@ -349,7 +349,7 @@ angular.module('eventModule', [])
 	 - 
  - Think of **scope** as the *area of operation*.
  - Look at the **data-binding**: <pre>&lt;a class="navbar-brand" href="#">{{title}}&gt;</pre>
-	 - {{title}} in the HTML document is bound to **EventCtrl**, we can see in the **eventModule** which contains our controller that **$scope.title** is Young Game Maker.
+	 - {{title}} in the HTML document is bound to **EventCtrl**, we can see in the **eventModule** which contains our controller that **$scope.title** is Young Game Maker and will be rendered so to the *view*.
 
  - Same here <pre> &lt;a href="{{menu[0].href}}"&gt;{{menu[0].name}}&lt;/a&gt;<br>
    &nbsp;&lt;a href="{{menu[1].href}}"&gt;{{menu[1].name}}&lt;/a&gt;</pre>
