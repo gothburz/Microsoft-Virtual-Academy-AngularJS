@@ -348,7 +348,7 @@ angular.module('eventModule', [])
 	 - Any element operating inside<br><pre>&lt;nav ng-controller="EventCtrl"&gt;&lt;/nav&gt;</pre> is functioning within the *scope* of **EventCtrl**.
 	 - 
  - Think of **scope** as the *area of operation*.
- - Look at the **data-binding** within the **nav** tag: <pre>&lt;a class="navbar-brand" href="#">{{title}}&gt;</pre>
+ - Look at the **data-binding**: <pre>&lt;a class="navbar-brand" href="#">{{title}}&gt;</pre>
 	 - {{title}} in the HTML document is bound to **EventCtrl**, we can see in the **eventModule** which contains our controller that **$scope.title** is Young Game Maker.
 
  - Same here <pre> &lt;a href="{{menu[0].href}}"&gt;{{menu[0].name}}&lt;/a&gt;<br>
