@@ -1042,11 +1042,11 @@ An expression that starts with ```::``` is considered a one-time expression.
 ###Types of Directives
 
 - Element Directive
-```<product-description></product-description>```
+	- <product-description></product-description>
 - Attribute Directive
-```<h3 product-description></h3>```
+	- <h3 product-description></h3>
 - Comment Directive
-```<product-description></product-description>```
+	- <product-description></product-description>
 - Class Directive
-```<div class="product-description></div>```
+	- <div class="product-description></div>
 
