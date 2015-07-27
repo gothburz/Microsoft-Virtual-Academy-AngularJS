@@ -447,8 +447,8 @@ angular.module('eventModule', [])
 -	Love Angular yet?
 
 ####SideNote
-if  you're wondering what the question mark is in: <pre>ng-class="(index===0) ? 'active' : ''"</pre> <br>
-It's just a shorthand **if/else** statement that in computer science is called a [ternary operator](https://en.wikipedia.org/wiki/%3F:). 
+if  you're wondering about the question mark: <pre>ng-class="(index===0) ? 'active' : ''"</pre> <br>
+It's a simple shorthand **if/else** statement that in computer science is called a [ternary operator](https://en.wikipedia.org/wiki/%3F:). 
 <br>
 
 **if**<pre>(index===0){'active'
