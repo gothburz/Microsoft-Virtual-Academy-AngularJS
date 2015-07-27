@@ -604,6 +604,13 @@ Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**
      &lt;/div&gt;
    &lt;/div&gt;
  &lt;/div&gt;</pre>
+ Taken straight from the AngularJS API this is an example of multiple **controllers**, nested **controllers**, **scope**, and **inheritance**.
+<br>
+- each controller has its own **scope** or *execution context*
+- if for example **ChildController** does not have properties *timeOfDay* or *name* explicitly defined within its scope it will **INHERIT** them up the chain, in this case from **MainController**.
+- Children will always inherit from the parent scope unless defined otherwise within their own controllers scope.
+- you may explicitly call up in angular using ```$parent```
+- More on [Controller API](https://docs.angularjs.org/guide/controller)
         
 
 
