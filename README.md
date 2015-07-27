@@ -751,7 +751,11 @@ angular.module('eventModule', [])
                 &lt;div&gt;CONTENT FOR TABS GO HERE&lt;/div&gt;
             &lt;/div&gt;
 
-        &lt;/div&gt;</pre>           
+        &lt;/div&gt;</pre>
+        
+        - we added "```as event```" to the **EventCtrl** in our HTML document
+	- now if you wish to reference anything on the **EventCtrl** you need to use ```event``` for example we ```{{event.title}}```
+- we used ```as event``` but you can use whatever as long as you use ```as```, for example ```as foo``` or ```as petrus```
         
 
 
