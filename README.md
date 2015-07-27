@@ -182,7 +182,7 @@ Read more on [AngularJS Data Binding](https://docs.angularjs.org/guide/databindi
 ###Module Loading & Dependencies
 
 ####Example:
-<pre class="prettyprint">angular.module('myModule', []).
+<pre>angular.module('myModule', []).
 config(function(injectables) { // provider-injector
   // This is an example of config block.
   // You can have as many of these as you want.
@@ -196,7 +196,8 @@ run(function(injectables) { // instance-injector
   // into run blocks
 });</pre>
 <br>
-####Example Breakdown
+
+#### Example Breakdown
 <br>
 - myModule is the name of the Angular module.
 	-  Naming convention for Angular modules is lowerCamelCase (myModule).
@@ -220,7 +221,8 @@ angular.module('mainApp', [])
 	console.log("Run hook");
 }])</pre>
 <br>
-####Example Breakdown
+
+###Example Breakdown
 <br>
 - mainApp is the name of the Angular module.
 - [] in the above example is the **dependencies** for the module. This example has none so it is an empty array.
