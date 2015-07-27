@@ -588,6 +588,8 @@ angular.module('eventModule', [])
 
 
 })();</pre>
+
+Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**. Each controller uses scope to contain *properties*. These properties are then displayed in the browser because we have them bound to our **view**.
         
 
 
