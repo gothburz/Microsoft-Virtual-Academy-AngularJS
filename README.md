@@ -456,5 +456,6 @@ It's a simple shorthand **if/else** statement that in computer science is called
 
 **else**<pre>''"</pre> do nothing. 
 <hr>
+##What is $scope?
 
 
