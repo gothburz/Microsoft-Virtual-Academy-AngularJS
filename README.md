@@ -1042,13 +1042,13 @@ An expression that starts with ```::``` is considered a one-time expression.
 ###Types of Directives
 
 - Element Directive
-	- &lt;product-description></product-description>
+	- &lt;product-description>&lt;/product-description&gt;
 - Attribute Directive
-	- <h3 product-description></h3>
+	- &lt;h3 product-description>&lt;/h3&gt;
 - Comment Directive
-	- <product-description></product-description>
+	- &lt;product-description&gt;&lt;/product-description&gt;
 - Class Directive
-	- <div class="product-description></div>
+	- &lt;div class="product-description&gt;&lt;/div&gt;
 ###Built in Directives
 
 - AngularJS provides a wealth of built in directives
