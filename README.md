@@ -822,5 +822,27 @@ angular.module('eventModule', [])
 	-  ```this``` simply attaches it to the **controller**
 - instead of attaching these properties to the scope object we are attaching it to the controller itself.
 
+##Expressions and Filters
+
+- What are Expressions?
+- What can we do with Expressions?
+- Using Expressions
+- What are Filters?
+- Using Filters
+- Creating a Custom Filter
+
+###What is an Expression?
+
+- JavaScript code snippets places in bindings **{{Hello World}}**
+- Evaluated against a scope object
+- Forgiving, doesn't throw an error
+- Can use filters with expressions to format data
+- Expressions do not have access to window, document, and location
+- View [Expression API](https://docs.angularjs.org/guide/expression)
+
+###What can you do with Expressions?
+
+![AngularJS Expressions ](http://teropa.info/images/angular_expressions_cheatsheet.png)
+
 
 
