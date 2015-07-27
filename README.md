@@ -457,5 +457,14 @@ It's a simple shorthand **if/else** statement that in computer science is called
 **else**<pre>''"</pre> do nothing. 
 <hr>
 ##What is $scope?
+- **$scope** is an object that refers back to the app model
+- **$scope** provides the [execution context](http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/) for expressions
+	- think of execution context as the environment / scope the current code is being evaluated in
+- **$scope** is the glue between the **controller** and **view**
+- attach properties and functions to scope to make them available to the view
+- any objects or primitives that is added to **$scope** are considered model properties.
+
+View the AngularJS API on [scopes](https://docs.angularjs.org/guide/scope) for more info.
+
 
 
