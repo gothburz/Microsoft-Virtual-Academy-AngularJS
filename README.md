@@ -755,7 +755,9 @@ angular.module('eventModule', [])
         
 - we added "```as event```" to the **EventCtrl** in our HTML document									- now if you wish to reference anything on the **EventCtrl** you need to use ```event``` for example we ```{{event.title}}```
 - we used ```as event``` but you can use whatever as long as you use ```as```, for example ```as foo``` or ```as petrus```
+<br>
 <pre>(function(){
+
 angular.module('eventModule', [])
 .factory('MainTitle', [function () {
 	
@@ -795,8 +797,8 @@ angular.module('eventModule', [])
 		return(this.index);
 	}
 	
-}])
-.controller('EventItemCtrl', ['$scope','MainTitle',  function ($scope,mainTitle) {
+}])</pre>
+<pre>.controller('EventItemCtrl', ['$scope','MainTitle',  function ($scope,mainTitle) {
 	this.itemTitle=mainTitle.title+" in NYC";
 	this.description=mainTitle.title+" is a one day event that teaches kids how to code";
 	this.imgSrc ="assets/img/newyork_large.jpg";
@@ -816,9 +818,7 @@ angular.module('eventModule', [])
 	
 }])
 
-
 })();</pre>
-        
 
 
 
