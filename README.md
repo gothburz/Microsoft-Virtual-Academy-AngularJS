@@ -196,6 +196,7 @@ run(function(injectables) { // instance-injector
   // into run blocks
 });</pre>
 
+
 ####Example Breakdown
 
 - myModule is the name of the Angular module.
@@ -220,6 +221,7 @@ angular.module('mainApp', [])
 	/* Run is when the app gets kicked off */
 	console.log("Run hook");
 }])</pre>
+
 
 ####Example Breakdown
 
