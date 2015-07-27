@@ -455,10 +455,15 @@ It's a simple shorthand **if/else** statement that in computer science is called
 <br>
 
 **else**<pre>''"</pre> do nothing. 
-<br><br><hr>
+<hr>
+
 
 ##What is $scope?
+
+
 </br>
+
+
 - **$scope** is an object that refers back to the app model
 - **$scope** provides the [execution context](http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/) for expressions
 	- think of execution context as the environment / scope the current code is being evaluated in
