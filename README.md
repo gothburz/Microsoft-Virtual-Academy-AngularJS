@@ -611,6 +611,73 @@ Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**
 - Children will always inherit from the parent scope unless defined otherwise within their own controllers scope.
 - you may explicitly call up in angular using ```$parent```
 - More on [Controller API](https://docs.angularjs.org/guide/controller)
+###Sharing Data
+
+<pre>(function(){
+
+angular.module('eventModule', [])
+.factory('MainTitle', [function () {
+	return {
+		title:"Young Game Maker"
+	};
+}])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', 'MainTitle',function ($scope,mainTitle) {
+	$scope.title = mainTitle.title;
+	$scope.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	$scope.index = 0;
+
+	$scope.setIndex=function(val)
+	{
+		$scope.index = val;
+		console.log("called")
+	}
+
+	$scope.getIndex=function(){
+		return($scope.index);
+	}
+	
+}])
+.controller('EventItemCtrl', ['$scope','MainTitle',  function ($scope,mainTitle) {
+	$scope.itemTitle=mainTitle.title+" in NYC";
+	$scope.description=mainTitle.title+" is a one day event that teaches kids how to code";
+	$scope.imgSrc ="assets/img/newyork_large.jpg";
+	$scope.date ="January 24, 2015";
+}])
+.controller('EventTabCtrl', ['$scope', function ($scope) {
+	$scope.tab = 0;
+	console.log("yes")
+	$scope.setTab=function(val)
+	{
+		$scope.tab = val;
+	}
+	$scope.getTab=function(val)
+	{
+		return($scope.tab);
+	}
+	
+}])
+
+
+})();</pre>
+
+- We used ```.factory``` within the module to store a title that we will use throughout. This makes it convenient in that if we need to change the title to something else we just have to change it here instead of every individual controller.
+- We also see examples of **dependency injection** in our controllers, as we are injecting **MainTitle** as a dependency.
         
 
 
