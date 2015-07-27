@@ -126,7 +126,7 @@ _In computer science, **declarative programming** is a programming paradigm, a s
 
 - It will load the module associated with the directive if specified.
 
-### Getting Started - Bootstrapping
+###Getting Started - Bootstrapping
 
 ![Bootstrap](https://docs.angularjs.org/img/guide/concepts-startup.png)
 
