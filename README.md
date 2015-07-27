@@ -454,3 +454,393 @@ It's a simple shorthand **if/else** statement that in computer science is called
 
 **else**<pre>''"</pre> do nothing.
 
+###What is $scope?
+
+- **$scope** is an object that refers back to the app model
+- **$scope** provides the [execution context](http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/) for expressions
+	- think of execution context as the environment / scope the current code is being evaluated in
+- **$scope** is the glue between the **controller** and **view**
+- attach properties and functions to scope to make them available to the view
+- any objects or primitives that is added to **$scope** are considered model properties.
+
+View the AngularJS API on [scopes](https://docs.angularjs.org/guide/scope) for more info.
+
+###Understanding Scope
+
+- Child scopes prototypically inherit
+- Isolate scopes do not
+- JavaScript Prototypical Inheritance: If it doesn't exist in current, it will go up the chain (parent). Hiding and shadowing of properties.
+- Best practice of always have a "**.**" in models.
+- Wiki on [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes) in AngularJS.
+- API on [Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) in JavaScript.
+
+###Multiple Controllers 
+
+<pre>
+  &lt;nav ng-controller="EventCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+            <!-- Brand and toggle get grouped for better mobile display -->
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+                    &lt;span class="sr-only">Toggle navigation&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                &lt;/button>
+                &lt;a class="navbar-brand" href="#">{{title}}&lt;/a&gt;
+            &lt;/div&gt;
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li  ng-click="setIndex(0)" ng-class="(index==0) ? 'active' : ''"&gt;
+                      &lt;a href="#">{{menu[0].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li ng-click="setIndex(1)"  ng-class="(index==1) ? 'active' : ''"&gt;
+                        &lt;a href="#">{{menu[1].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+
+                    &lt;li>&lt;a href="#"&gt; {{title}}&lt;/a>&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.navbar-collapse --&gt;
+        &lt;/div&gt;
+        &lt;!-- /.container --&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Page Content --&gt;
+    &lt;div class="container"&gt;
+
+        &lt;!-- Portfolio Item Heading --&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-12"&gt;
+                &lt;h1 class="page-header">New York 
+                    &lt;small>January 24th, 2015&lt;/small&gt;
+                &lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.row --&gt;
+
+        &lt;!-- Portfolio Item Row --&gt;
+        &lt;div class="row" ng-controller="EventItemCtrl"&gt;
+
+            &lt;div class="col-md-8"&gt;
+                &lt;img class="img-responsive" src="assets/img/newyork_big.jpg" alt=""&gt;
+            &lt;/div&gt;
+
+            &lt;div class="col-md-4"&gt;
+                &lt;h3&gt;{{itemTitle}}&lt;/h3&gt;
+                &lt;p&gt;{{description}}&lt;/p&gt;
+                &lt;h3&gt;Details&lt;/h3&gt;
+                &lt;ul class="nav nav-tabs"&gt;
+                     &lt;li class="active">&lt;a href="#">Schedule&lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Tickets&lt;/a>&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Location&lt;/a&gt;&lt;/li&gt;
+                    
+                &lt;/ul&gt;
+                &lt;div&gt;CONTENT FOR TABS GO HERE&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+</pre>
+
+<pre>
+(function(){
+
+angular.module('eventModule', [])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', function ($scope) {
+	$scope.title = "Young Game Maker";
+	$scope.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	$scope.index = 0;
+
+	$scope.setIndex=function(val)
+	{
+		$scope.index = val;
+		console.log("called")
+	}
+
+	$scope.getIndex=function(){
+		return($scope.index);
+	}
+	
+}])
+.controller('EventItemCtrl', ['$scope', function ($scope) {
+	$scope.itemTitle="Young Game Makers in NYC";
+	$scope.description="Young Game Makers is a one day event that teaches kids how to code";
+	$scope.imgSrc ="assets/img/newyork_large.jpg";
+	$scope.date ="January 24, 2015";
+
+	
+}])
+
+
+})();
+</pre>
+
+Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**. Each controller uses scope to contain *properties*. These properties are then displayed in the browser because we have them bound to our **view**.
+
+###Controller and Scope
+
+<pre>
+ &lt;div class="spicy" &gt;
+   &lt;div ng-controller="MainController"&gt;
+     &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+
+     &lt;div ng-controller="ChildController"&gt;
+       &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+
+       &lt;div ng-controller="GrandChildController"&gt;
+         &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ </pre>
+Taken straight from the AngularJS API this is an example of multiple **controllers**, nested **controllers**, **scope**, and **inheritance**.
+<br>
+
+- each controller has its own **scope** or *execution context*
+- if for example **ChildController** does not have properties *timeOfDay* or *name* explicitly defined within its scope it will **INHERIT** them up the chain, in this case from **MainController**.
+- Children will always inherit from the parent scope unless defined otherwise within their own controllers scope.
+- you may explicitly call up in angular using ```$parent```
+- More on [Controller API](https://docs.angularjs.org/guide/controller)
+
+###Sharing Data
+
+<pre>
+
+(function(){
+
+angular.module('eventModule', [])
+.factory('MainTitle', [function () {
+	return {
+		title:"Young Game Maker"
+	};
+}])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', 'MainTitle',function ($scope,mainTitle) {
+	$scope.title = mainTitle.title;
+	$scope.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	$scope.index = 0;
+
+	$scope.setIndex=function(val)
+	{
+		$scope.index = val;
+		console.log("called")
+	}
+
+	$scope.getIndex=function(){
+		return($scope.index);
+	}
+	
+}])
+.controller('EventItemCtrl', ['$scope','MainTitle',  function ($scope,mainTitle) {
+	$scope.itemTitle=mainTitle.title+" in NYC";
+	$scope.description=mainTitle.title+" is a one day event that teaches kids how to code";
+	$scope.imgSrc ="assets/img/newyork_large.jpg";
+	$scope.date ="January 24, 2015";
+}])
+.controller('EventTabCtrl', ['$scope', function ($scope) {
+	$scope.tab = 0;
+	console.log("yes")
+	$scope.setTab=function(val)
+	{
+		$scope.tab = val;
+	}
+	$scope.getTab=function(val)
+	{
+		return($scope.tab);
+	}
+	
+}])
+
+
+})();
+</pre>
+
+- We used ```.factory``` within the module to store a title that we will use throughout. This makes it convenient in that if we need to change the title to something else we just have to change it here instead of every individual controller.
+- We also see examples of **dependency injection** in our controllers, as we are injecting **MainTitle** as a dependency.
+
+###"Controller as" syntax
+
+- Defines a named scope
+- Defines properties on the function Controller and not on the $scope 
+- object ```$scope``` is still useful for things such as ```$watch```( watching to see if a property changes )
+
+<pre>
+  &lt;nav ng-controller="EventCtrl as event" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+            <!-- Brand and toggle get grouped for better mobile display -->
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+                    &lt;span class="sr-only">Toggle navigation&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                &lt;/button>
+                &lt;a class="navbar-brand" href="#">{{event.title}}&lt;/a&gt;
+            &lt;/div&gt;
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li  ng-click="setIndex(0)" ng-class="(index==0) ? 'active' : ''"&gt;
+                      &lt;a href="#">{{event.menu[0].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li ng-click="setIndex(1)"  ng-class="(index==1) ? 'active' : ''"&gt;
+                        &lt;a href="#">{{event.menu[1].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+
+                    &lt;li>&lt;a href="#"&gt; {{event.title}}&lt;/a>&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.navbar-collapse --&gt;
+        &lt;/div&gt;
+        &lt;!-- /.container --&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Page Content --&gt;
+    &lt;div class="container"&gt;
+
+        &lt;!-- Portfolio Item Heading --&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-12"&gt;
+                &lt;h1 class="page-header">New York 
+                    &lt;small>January 24th, 2015&lt;/small&gt;
+                &lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.row --&gt;
+
+        &lt;!-- Portfolio Item Row --&gt;
+        &lt;div class="row" ng-controller="EventItemCtrl as eventitem"&gt;
+
+            &lt;div class="col-md-8"&gt;
+                &lt;img class="img-responsive" src="assets/img/newyork_big.jpg" alt=""&gt;
+            &lt;/div&gt;
+
+            &lt;div class="col-md-4"&gt;
+                &lt;h3&gt;{{eventitem.itemTitle}}&lt;/h3&gt;
+                &lt;p&gt;{{eventitem.description}}&lt;/p&gt;
+                &lt;h3&gt;Details&lt;/h3&gt;
+                &lt;ul class="nav nav-tabs"&gt;
+                     &lt;li class="active">&lt;a href="#">Schedule&lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Tickets&lt;/a>&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Location&lt;/a&gt;&lt;/li&gt;
+                    
+                &lt;/ul&gt;
+                &lt;div&gt;CONTENT FOR TABS GO HERE&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+</pre>
+
+- we added "```as event```" to the **EventCtrl** in our HTML document
+	- now if you wish to reference anything on the **EventCtrl** you need to use ```event``` for example we ```{{event.title}}```
+- we used ```as event``` but you can use whatever as long as you use ```as```, for example ```as foo``` or ```as petrus```
+
+
+<pre>
+
+
+(function(){
+
+angular.module('eventModule', [])
+.factory('MainTitle', [function () {
+	
+
+	return {
+		title:"Young Game Maker"
+	};
+}])
+.config([function () {
+	console.log("Event Module:: config");
+}])
+.run([function () {
+	console.log("Event Module::running");
+}])
+.controller('EventCtrl', ['$scope', 'MainTitle',function ($scope,mainTitle) {
+	this.title = mainTitle.title;
+	this.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	this.index = 0;
+
+	this.setIndex=function(val)
+	{
+		this.index = val;
+		console.log("called")
+	}
+
+	this.getIndex=function(){
+		return(this.index);
+	}
+	
+}])
+.controller('EventItemCtrl', ['$scope','MainTitle',  function ($scope,mainTitle) {
+	this.itemTitle=mainTitle.title+" in NYC";
+	this.description=mainTitle.title+" is a one day event that teaches kids how to code";
+	this.imgSrc ="assets/img/newyork_large.jpg";
+	this.date ="January 24, 2015";
+}])
+.controller('EventTabCtrl', ['$scope', function ($scope) {
+	this.tab = 0;
+	console.log("yes")
+	this.setTab=function(val)
+	{
+		this.tab = val;
+	}
+	this.getTab=function(val)
+	{
+		return(this.tab);
+	}
+	
+}])
+
+
+})();
+</pre>
+
+- in the JavaScript file we replaced ```$scope``` with ```this```
+	-  ```this``` simply attaches it to the **controller**
+- instead of attaching these properties to the scope object we are attaching it to the controller itself.
+
