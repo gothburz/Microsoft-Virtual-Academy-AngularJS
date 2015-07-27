@@ -182,7 +182,7 @@ Read more on [AngularJS Data Binding](https://docs.angularjs.org/guide/databindi
 ###Module Loading & Dependencies
 
 ####Example:
-<pre>angular.module('myModule', []).
+<pre class="prettyprint">angular.module('myModule', []).
 config(function(injectables) { // provider-injector
   // This is an example of config block.
   // You can have as many of these as you want.
@@ -205,7 +205,7 @@ run(function(injectables) { // instance-injector
 <br>
 - organize your module by functionality or component type.
 
-<pre>/*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
+<pre class="prettyprint">/*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
 
 angular.module('mainApp', [])
 .config([function () {
@@ -258,7 +258,7 @@ angular.module('mainApp', [])
 ###Example Controller:
 
 **HTML:**
-<pre>
+<pre class="prettyprint">
 &lt;body ng-app="mainApp"&gt;
     <!-- Navigation -->
     &lt;nav ng-controller="EventCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
@@ -293,7 +293,7 @@ angular.module('mainApp', [])
 
 **Module mainAPP:**
 
-<pre>
+<pre class="prettyprint">
 /*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
 /*added the second module as a dependancy */
 
@@ -313,7 +313,7 @@ angular.module('mainApp', ['eventModule'])
 <br>
 **Module eventModule:**
 
-<pre>
+<pre class="prettyprint">
 
 (function(){
 
