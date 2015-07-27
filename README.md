@@ -473,6 +473,7 @@ View the AngularJS API on [scopes](https://docs.angularjs.org/guide/scope) for m
 - Best practice of always have a "**.**" in models.
 - Wiki on [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes) in AngularJS.
 - API on [Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) in JavaScript.
+<br>
 ###Multiple Controllers 
 
 <pre> &lt;nav ng-controller="EventCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
