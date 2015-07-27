@@ -205,6 +205,8 @@ run(function(injectables) { // instance-injector
 <br>
 ####View entire [Module API](https://docs.angularjs.org/guide/module)
 <br>
+<hr>
+
 ###Creating an AngularJS Module
 
 - organize your module by functionality or component type.
