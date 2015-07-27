@@ -1042,11 +1042,35 @@ An expression that starts with ```::``` is considered a one-time expression.
 ###Types of Directives
 
 - Element Directive
-	- <product-description></product-description>
+	- &lt;product-description></product-description>
 - Attribute Directive
 	- <h3 product-description></h3>
 - Comment Directive
 	- <product-description></product-description>
 - Class Directive
 	- <div class="product-description></div>
+###Built in Directives
+
+- AngularJS provides a wealth of built in directives
+- Some of these override built in HTML elements to provide additional functionality - like ```<form>```
+- Other directives are visible through the ```ng-``` prefix
+
+###Some built in Directives 
+
+- ```ng-href```
+- ```ng-src```
+- ```ng-disabled```
+- ```ng-checked```
+- ```ng-class```
+- ```ng-style```
+- ```ng-selected```
+- ```ng-app```
+- ```ng-controller```
+- ```ng-show```
+- ```ng-hide```
+
+###How Directives are Instantiated
+
+- Angular's compiler scans the DOM looking for Directives
+- Directives can be declared a few different ways
 
