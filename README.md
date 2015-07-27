@@ -542,7 +542,7 @@ View the AngularJS API on [scopes](https://docs.angularjs.org/guide/scope) for m
 
         &lt;/div&gt;</pre>
         
-<pre>```(function(){
+<pre>(function(){
 
 angular.module('eventModule', [])
 .config([function () {
@@ -587,7 +587,7 @@ angular.module('eventModule', [])
 }])
 
 
-})();```</pre>
+})();</pre>
         
 
 
