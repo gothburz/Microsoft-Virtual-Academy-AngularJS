@@ -756,7 +756,8 @@ angular.module('eventModule', [])
 - we added "```as event```" to the **EventCtrl** in our HTML document									- now if you wish to reference anything on the **EventCtrl** you need to use ```event``` for example we ```{{event.title}}```
 - we used ```as event``` but you can use whatever as long as you use ```as```, for example ```as foo``` or ```as petrus```
 <br>
-<pre>(function(){
+<pre>
+(function(){
 
 angular.module('eventModule', [])
 .factory('MainTitle', [function () {
@@ -818,7 +819,8 @@ angular.module('eventModule', [])
 	
 }])
 
-})();</pre>
+})();
+</pre>
 
 
 
