@@ -844,5 +844,181 @@ angular.module('eventModule', [])
 
 ![AngularJS Expressions ](http://teropa.info/images/angular_expressions_cheatsheet.png)
 
+###One time binding
+
+**Why use One time Binding?**
+It saves resources!
+<br>
+Straight from the AngularJS API: <br>*"The main purpose of one-time binding expression is to provide a way to create a binding that gets deregistered and frees up resources once the binding is stabilized. Reducing the number of expressions being watched makes the digest loop faster and allows more information to be displayed at the same time."*
+
+[Angular Expressions](https://docs.angularjs.org/guide/expression)
+
+**Example:**
+
+```<a class="navbar-brand" href="#">{{::title}}</a>```
+
+An expression that starts with ```::``` is considered a one-time expression.
+
+###What are filters?
+
+- Formats the value of an expression
+- Filters can be applied in the view
+```{{employees.array | filter: 's'}}```
+- Filters applied in the view can be costly as they are re-evaluated
+- Filters can be used elsewhere: controllers, services, etc.
+
+###Built in Filters
+
+- orderBy
+- limitTo
+- lower & uppercase
+- filter
+- currency
+- number
+- date
+
+<br>
+**Example:**
+<br>
+```p>{{item.date | date:'MMMM,dd yyyy'}}</p>```
+
+<pre>&lt;div ng-repeat="item in event.events | orderBy: 'date'" class="col-sm-3 col-xs-6" &gt;
+                &lt;a href="#" &gt;
+                    &lt;img class="img-responsive portfolio-item" ng-src="assets/img/{{item.imgName}}_small.jpg" alt="" &gt;
+                &lt;/a &gt;
+                &lt;div &gt;
+                    &lt;h4>{{item.title}}&lt;/h4 &gt;
+                    &lt; &gt;{{item.date | date:'MMMM,dd yyyy'}}&lt;/p &gt;
+                &lt;/div &gt;
+            &lt;/div &gt;</pre>
+
+<pre>.controller('EventCtrl', ['$scope', 'MainTitle',function ($scope,mainTitle) {
+	this.title = mainTitle.title;
+	console.log(this.title);
+	this.menu=[
+		{
+			name:"Events",
+			href:"index.html"
+		},
+		{
+			name:"Contact",
+			href:"contact.html"
+		}
+	]
+
+	this.index = 0;
+	this.eventIndex = 0;
+
+	this.setIndex=function(val)
+	{
+		this.index = val;
+		console.log("called")
+	}
+
+	this.getIndex=function(){
+		return(this.index);
+	}
+
+	this.setEventIndex = function(val)
+	{
+		this.eventIndex = val;
+	}
+	this.getEventIndex = function(){
+		return(this.eventIndex);
+	}
+
+	this.events=[
+	{
+		title : "New York",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"newyork",
+		date :Date.parse("January 24 2015")
+	},
+	{
+		title: "Seattle",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"seattle",
+		date:Date.parse("February 24 2015")
+	},
+	{
+		title: "San Francisco",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"sanfran",
+		date:Date.parse("April 24 2015")
+	},
+	{
+		title : "Vancouver",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"vancouver",
+		date:Date.parse("March 24 2015")
+	},
+	{
+		title : "Brighton",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"brighton",
+		date:Date.parse("September 24 2015")
+	},
+
+	{
+		title: "London",
+		itemTitle:mainTitle.title,
+		description:" is a one day event that teaches kids how to code",
+		imgName:"London",
+		date:Date.parse("September 26 2015")
+	},
+
+	]
+	
+}])</pre>
+
+- in the above example we are using the ```ng-repeat``` directive as a *template*
+- basically ```ng-repeat``` is running a **for/each** loop.
+- where ```event``` is our controller **EventCtrl** and ```events``` is our array located in our JS file.
+- [ngRepeat API](https://docs.angularjs.org/api/ng/directive/ngRepeat)
+- ```|``` means filter!
+
+###Creating custom Filters
+
+- Register a new filter factory function on the model
+- Return a filter function that takes the input value as the first argument
+- Filter function should be stateless typically
+
+<pre>angular.module('eventModule', [])
+.factory('MainTitle', [function () {
+	
+
+	return {
+		title:"Young Game Maker"
+	};
+}])
+.filter('searchCity', function() {
+  return function(items,search) {
+    var filtered = [];
+    if(!search){return items;}
+    angular.forEach(items, function(item) {
+
+    	if(angular.lowercase(item.title).indexOf(angular.lowercase(search))!=-1)
+    	{
+    		filtered.push(item);
+    	}
+      
+    });
+   return filtered;
+  };
+})</pre>
+<br>
+**HTML** 
+```<input type="text" ng-model="event.search" placeholder="Search by City">```
+
+- In the JS file we created a custom filter that filters out information by city.
+- we tied that filter to our view using an input field with ```ng-model``` attached.
+	- The ```ng-model``` directive binds an input, select,  textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive.
+	- more on [ng-model](https://docs.angularjs.org/api/ng/directive/ngModel)
+
 
 
