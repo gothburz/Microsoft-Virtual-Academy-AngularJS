@@ -590,6 +590,20 @@ angular.module('eventModule', [])
 })();</pre>
 
 Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**. Each controller uses scope to contain *properties*. These properties are then displayed in the browser because we have them bound to our **view**.
+
+<pre>&lt;div class="spicy" &gt;
+   &lt;div ng-controller="MainController"&gt;
+     &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+
+     &lt;div ng-controller="ChildController"&gt;
+       &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+
+       &lt;div ng-controller="GrandChildController"&gt;
+         &lt;p&gt;Good {{timeOfDay}}, {{name}}! &lt;/p&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;</pre>
         
 
 
