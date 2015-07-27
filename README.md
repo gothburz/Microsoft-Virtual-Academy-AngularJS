@@ -208,7 +208,7 @@ run(function(injectables) { // instance-injector
 <hr>
 
 ###Creating an AngularJS Module
-
+<br>
 - organize your module by functionality or component type.
 
 <pre>/*Angular Modules take a name, best practice is lowerCamelCase, and a list of dependancies*/
