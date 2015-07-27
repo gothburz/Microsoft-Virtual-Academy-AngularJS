@@ -465,6 +465,14 @@ It's a simple shorthand **if/else** statement that in computer science is called
 - any objects or primitives that is added to **$scope** are considered model properties.
 
 View the AngularJS API on [scopes](https://docs.angularjs.org/guide/scope) for more info.
+###Understanding Scope
+
+- Child scopes prototypically inherit
+- Isolate scopes do not
+- JavaScript Prototypical Inheritance: If it doesn't exist in current, it will go up the chain (parent). Hiding and shadowing of properties.
+- Best practice of always have a "**.**" in models.
+- Wiki on [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes) in AngularJS.
+- API on [Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) in JavaScript.
 
 
 
