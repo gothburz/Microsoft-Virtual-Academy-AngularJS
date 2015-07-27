@@ -681,6 +681,77 @@ angular.module('eventModule', [])
 
 - We used ```.factory``` within the module to store a title that we will use throughout. This makes it convenient in that if we need to change the title to something else we just have to change it here instead of every individual controller.
 - We also see examples of **dependency injection** in our controllers, as we are injecting **MainTitle** as a dependency.
+###"Controller as" syntax
+
+- Defines a named scope
+- Defines properties on the function Controller and not on the $scope 
+- object ```$scope``` is still useful for things such as ```$watch```( watching to see if a property changes )
+
+<pre>&lt;nav ng-controller="EventCtrl as event" class="navbar navbar-inverse navbar-fixed-top" role="navigation"&gt;
+        &lt;div class="container"&gt;
+            <!-- Brand and toggle get grouped for better mobile display -->
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"&gt;
+                    &lt;span class="sr-only">Toggle navigation&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                    &lt;span class="icon-bar">&lt;/span&gt;
+                &lt;/button>
+                &lt;a class="navbar-brand" href="#">{{event.title}}&lt;/a&gt;
+            &lt;/div&gt;
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li  ng-click="setIndex(0)" ng-class="(index==0) ? 'active' : ''"&gt;
+                      &lt;a href="#">{{event.menu[0].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li ng-click="setIndex(1)"  ng-class="(index==1) ? 'active' : ''"&gt;
+                        &lt;a href="#">{{event.menu[1].name}}&lt;/a&gt;
+                    &lt;/li&gt;
+
+                    &lt;li>&lt;a href="#"&gt; {{event.title}}&lt;/a>&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.navbar-collapse --&gt;
+        &lt;/div&gt;
+        &lt;!-- /.container --&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Page Content --&gt;
+    &lt;div class="container"&gt;
+
+        &lt;!-- Portfolio Item Heading --&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-lg-12"&gt;
+                &lt;h1 class="page-header">New York 
+                    &lt;small>January 24th, 2015&lt;/small&gt;
+                &lt;/h1&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.row --&gt;
+
+        &lt;!-- Portfolio Item Row --&gt;
+        &lt;div class="row" ng-controller="EventItemCtrl as eventitem"&gt;
+
+            &lt;div class="col-md-8"&gt;
+                &lt;img class="img-responsive" src="assets/img/newyork_big.jpg" alt=""&gt;
+            &lt;/div&gt;
+
+            &lt;div class="col-md-4"&gt;
+                &lt;h3&gt;{{eventitem.itemTitle}}&lt;/h3&gt;
+                &lt;p&gt;{{eventitem.description}}&lt;/p&gt;
+                &lt;h3&gt;Details&lt;/h3&gt;
+                &lt;ul class="nav nav-tabs"&gt;
+                     &lt;li class="active">&lt;a href="#">Schedule&lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Tickets&lt;/a>&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#">Location&lt;/a&gt;&lt;/li&gt;
+                    
+                &lt;/ul&gt;
+                &lt;div&gt;CONTENT FOR TABS GO HERE&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;</pre>           
         
 
 
