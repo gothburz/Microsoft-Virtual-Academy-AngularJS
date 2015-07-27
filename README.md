@@ -612,6 +612,8 @@ Notice we have two **controllers**, we have **EventCtrl**, and **EventItemCtrl**
 - you may explicitly call up in angular using ```$parent```
 - More on [Controller API](https://docs.angularjs.org/guide/controller)
 <br>
+
+
 ###Sharing Data
 
 <pre>(function(){
