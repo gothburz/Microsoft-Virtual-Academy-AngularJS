@@ -1049,6 +1049,7 @@ An expression that starts with ```::``` is considered a one-time expression.
 	- &lt;product-description&gt;&lt;/product-description&gt;
 - Class Directive
 	- &lt;div class="product-description&gt;&lt;/div&gt;
+<br>
 ###Built in Directives
 
 - AngularJS provides a wealth of built in directives
