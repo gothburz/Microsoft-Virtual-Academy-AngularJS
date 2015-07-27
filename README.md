@@ -757,7 +757,7 @@ angular.module('eventModule', [])
 - we used ```as event``` but you can use whatever as long as you use ```as```, for example ```as foo``` or ```as petrus```
 <pre>(function(){
 
-angular.module('eventModule', [])
+<pre>angular.module('eventModule', [])
 .factory('MainTitle', [function () {
 	
 
