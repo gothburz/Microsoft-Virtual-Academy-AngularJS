@@ -1012,7 +1012,8 @@ An expression that starts with ```::``` is considered a one-time expression.
   };
 })</pre>
 <br>
-**HTML** 
+**HTML:**
+<br>
 ```<input type="text" ng-model="event.search" placeholder="Search by City">```
 
 - In the JS file we created a custom filter that filters out information by city.
