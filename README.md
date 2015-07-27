@@ -454,7 +454,8 @@ It's a simple shorthand **if/else** statement that in computer science is called
 }</pre> change class to active. 
 <br>
 
-**else**<pre>''"</pre> do nothing.
+**else**<pre>''"</pre> do nothing. 
+<br><br><hr>
 
 ###What is $scope?
 
