@@ -1021,5 +1021,59 @@ An expression that starts with ```::``` is considered a one-time expression.
 	- The ```ng-model``` directive binds an input, select,  textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive.
 	- more on [ng-model](https://docs.angularjs.org/api/ng/directive/ngModel)
 
+##Directives
+
+- What are Directives
+- Built in Directives
+- ng-include
+- How Directives are instantiated
+- Creating a Custom Directive
+- Creating a Custom Directive Controller
+
+###What are Directives, really?
+
+- AngularJS directives are markers on the DOM that tell the Angular compiler to attach behaviour ot transform the DOM element
+- Directives can be placed on the DOM as:
+	- Element directives
+	- Attribute directives
+	- CSS class directives
+	- Comment directives
+
+###Types of Directives
+
+- Element Directive
+```<product-description></product-description>```
+- Attribute Directive
+```<h3 product-description></h3>```
+- Comment Directive
+```<product-description></product-description>```
+- Class Directive
+```<div class="product-description></div>```
+
+###Built in Directives
+
+- AngularJS provides a wealth of built in directives
+- Some of these override built in HTML elements to provide additional functionality - like ```<form>```
+- Other directives are visible through the ```ng-``` prefix
+
+###Some built in Directives 
+
+- ```ng-href```
+- ```ng-src```
+- ```ng-disabled```
+- ```ng-checked```
+- ```ng-class```
+- ```ng-style```
+- ```ng-selected```
+- ```ng-app```
+- ```ng-controller```
+- ```ng-show```
+- ```ng-hide```
+
+###How Directives are Instantiated
+
+- Angular's compiler scans the DOM looking for Directives
+- Directives can be declared a few different ways
+
 
 
