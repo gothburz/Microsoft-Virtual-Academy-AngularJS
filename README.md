@@ -196,17 +196,11 @@ run(function(injectables) { // instance-injector
   // into run blocks
 });</pre>
 <br>
-
-#### Example Breakdown
+#### Example Breakdown 
+- myModule is the name of the Angular module. - Naming convention for Angular modules is lowerCamelCase (myModule). - [] in the above example is the **dependencies** for the module. This example has none so it is an empty array. 
 <br>
-- myModule is the name of the Angular module.
-	-  Naming convention for Angular modules is lowerCamelCase (myModule).
-- [] in the above example is the **dependencies** for the module. This example has none so it is an empty array.
-<br>
-####View entire [Module API](https://docs.angularjs.org/guide/module)
-<br>
+#### View entire [Module API](https://docs.angularjs.org/guide/module) 
 <hr>
-
 ###Creating an AngularJS Module
 <br>
 - organize your module by functionality or component type.
