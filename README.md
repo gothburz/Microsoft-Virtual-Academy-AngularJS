@@ -1096,8 +1096,7 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
         }, //Embed a custom controller in the directive
         link: function ($scope, element, attrs) { } //DOM manipulation
     }
-});
-</pre>
+});</pre>
 <br>
 **HTML:**
 
