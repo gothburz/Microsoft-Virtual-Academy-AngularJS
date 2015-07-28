@@ -1100,7 +1100,7 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 <br>
 **HTML:**
 <br>
-```<event-item></event-item>```
+<pre><event-item></event-item></pre>
 
 
 
