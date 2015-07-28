@@ -1076,4 +1076,77 @@ An expression that starts with ```::``` is considered a one-time expression.
 
 - Angular's compiler scans the DOM looking for Directives
 - Directives can be declared a few different ways
+<br>
+A valuable directive you will use frequently as your project grows is ```ng-include``` this allows us to break up our project in AngularJS into pieces.
+
+```<div ng-include src="'app/event/header.html'"></div>```
+
+###Creating custom Directives
+
+<pre>// directives
+ .directive('eventItem', function () {
+    return {
+        restrict: 'E', //E = element, A = attribute, C = class, M = comment   
+        templateUrl: 'app/event/eventItem.html',
+        controller: function($scope){
+            console.log("do stuff")
+
+        }, //Embed a custom controller in the directive
+        link: function ($scope, element, attrs) { } //DOM manipulation
+    }
+});</pre>
+<br>
+**HTML:**
+<br>
+```<event-item></event-item>```
+
+- you need to restrict your directive
+	- restricting means what is this element being used as?
+	- see above example: E = element, A = attribute, C = class, M = comment
+- ```templateUrl``` is simply a path to en external document
+- <br>
+##Routing, View Management, & UIRouter
+
+- ```ng-route```
+- Using ```ng-route```
+- Pretty URLS
+- Using UI Router
+- Animation
+<br>
+###Routing with NgRoute
+
+<pre>angular.module('mainApp', ['eventModule','ngRoute'])
+.config(['$routeProvider',
+  function($routeProvider) {
+    console.log($routeProvider);
+    $routeProvider.
+      when('/contact', {
+        templateUrl: 'contact.html',
+        controller: 'ContactCtrl'
+      }).
+      when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeCtrl'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }])
+.run([function () {
+	/* Run is when the app gets kicked off*/
+	console.log("Run hook");
+}])
+.controller('ContactCtrl', ['$scope', function ($scope) {
+	
+}])
+.controller('HomeCtrl', ['$scope', function ($scope) {
+ 
+}])</pre>
+
+```<ng-view></ng-view>```
+
+- based on what page we navigate to Angular will fire off the specified ```controller``` and ```templateUrl```we set up in ```.config``` and place it inside ```<ng-view></ng-view>```.
+
+
+
 
