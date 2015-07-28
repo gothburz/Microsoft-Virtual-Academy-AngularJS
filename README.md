@@ -1114,6 +1114,7 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 - Using UI Router
 - Animation
 <br>
+
 ###Routing with NgRoute
 
 <pre>angular.module('mainApp', ['eventModule','ngRoute'])
