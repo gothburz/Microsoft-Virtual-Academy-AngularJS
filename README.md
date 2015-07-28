@@ -1109,8 +1109,8 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
  <br>
 ##Routing, View Management, & UIRouter
 
-- ```ng-route```
-- Using ```ng-route```
+- **ng-route**
+- Using **ng-route**
 - Pretty URLS
 - Using UI Router
 - Animation
