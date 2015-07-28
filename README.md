@@ -1105,6 +1105,34 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 	- see above example: E = element, A = attribute, C = class, M = comment
 - ```templateUrl``` is simply a path to en external document
 - <br>
+A valuable directive you will use frequently as your project grows is ```ng-include``` this allows us to break up our project in AngularJS into pieces.
+
+```<div ng-include src="'app/event/header.html'"></div>```
+
+###Creating custom Directives
+
+<pre>// directives
+ .directive('eventItem', function () {
+    return {
+        restrict: 'E', //E = element, A = attribute, C = class, M = comment   
+        templateUrl: 'app/event/eventItem.html',
+        controller: function($scope){
+            console.log("do stuff")
+
+        }, //Embed a custom controller in the directive
+        link: function ($scope, element, attrs) { } //DOM manipulation
+    }
+});</pre>
+<br>
+**HTML:**
+<br>
+```<event-item></event-item>```
+
+- you need to restrict your directive
+	- restricting means what is this element being used as?
+	- see above example: E = element, A = attribute, C = class, M = comment
+- ```templateUrl``` is simply a path to en external document
+- <br>
 ##Routing, View Management, & UIRouter
 
 - ```ng-route```
@@ -1141,7 +1169,8 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 }])
 .controller('HomeCtrl', ['$scope', function ($scope) {
  
-}])</pre>
+}])
+</pre>
 
 ```<ng-view></ng-view>```
 
