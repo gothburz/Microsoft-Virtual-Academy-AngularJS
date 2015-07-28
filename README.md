@@ -1101,6 +1101,12 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 **HTML:**
 <br>
 &lt;event-item&gt;&lt;/event-item&gt;
+<br>
+- you need to restrict your directive
+	- restricting means what is this element being used as?
+	- see above example: E = element, A = attribute, C = class, M = comment
+- ```templateUrl``` is simply a path to en external document
+- <br>
 
 
 
