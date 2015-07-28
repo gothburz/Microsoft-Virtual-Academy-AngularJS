@@ -1096,11 +1096,12 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
         }, //Embed a custom controller in the directive
         link: function ($scope, element, attrs) { } //DOM manipulation
     }
-});</pre>
+});
+</pre>
 <br>
 **HTML:**
 <br>
-```&lt;event-item&gt;&lt;/event-item&gt;```
+```<event-item></event-item>```
 
 - you need to restrict your directive
 	- restricting means what is this element being used as?
