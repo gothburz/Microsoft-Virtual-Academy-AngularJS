@@ -1107,6 +1107,7 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 	- see above example: E = element, A = attribute, C = class, M = comment
 - ```templateUrl``` is simply a path to en external document
  <br>
+
 ##Routing, View Management, & UIRouter
 - **ng-route**
 - Using **ng-route**
