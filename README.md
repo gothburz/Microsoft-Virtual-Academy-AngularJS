@@ -1116,47 +1116,6 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 - Animation
 <br>
 
-- ```ng-route```
-- Using ```ng-route```
-- Pretty URLS
-- Using UI Router
-- Animation
-<br>
-
-###Routing with NgRoute
-
-<pre>angular.module('mainApp', ['eventModule','ngRoute'])
-.config(['$routeProvider',
-  function($routeProvider) {
-    console.log($routeProvider);
-    $routeProvider.
-      when('/contact', {
-        templateUrl: 'contact.html',
-        controller: 'ContactCtrl'
-      }).
-      when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeCtrl'
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-  }])
-.run([function () {
-	/* Run is when the app gets kicked off*/
-	console.log("Run hook");
-}])
-.controller('ContactCtrl', ['$scope', function ($scope) {
-	
-}])
-.controller('HomeCtrl', ['$scope', function ($scope) {
- 
-}])
-</pre>
-
-```<ng-view></ng-view>```
-
-- based on what page we navigate to Angular will fire off the specified ```controller``` and ```templateUrl```we set up in ```.config``` and place it inside ```<ng-view></ng-view>```.
 
 
 
