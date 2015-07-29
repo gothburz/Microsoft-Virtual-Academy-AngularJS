@@ -1118,6 +1118,34 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 
 ###Routing with NgRoute
 
+<pre>angular.module('mainApp', ['eventModule','ngRoute'])
+.config(['$routeProvider',
+  function($routeProvider) {
+    console.log($routeProvider);
+    $routeProvider.
+      when('/contact', {
+        templateUrl: 'contact.html',
+        controller: 'ContactCtrl'
+      }).
+      when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeCtrl'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }])
+.run([function () {
+	/* Run is when the app gets kicked off*/
+	console.log("Run hook");
+}])
+.controller('ContactCtrl', ['$scope', function ($scope) {
+	
+}])
+.controller('HomeCtrl', ['$scope', function ($scope) {
+ 
+}])</pre>
+
 
 
 
