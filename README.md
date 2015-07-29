@@ -1146,6 +1146,8 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
  
 }])</pre>
 
+```<ng-view></ng-view>```
+
 
 
 
