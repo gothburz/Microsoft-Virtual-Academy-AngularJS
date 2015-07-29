@@ -1148,7 +1148,8 @@ A valuable directive you will use frequently as your project grows is ```ng-incl
 
 <pre>&lt;ng-view&gt;&lt;/ng-view&gt;</pre>
 
-- based on what page we navigate to Angular will fire off the specified ```controller``` and ```templateUrl```we set up in ```.config``` and place it inside ```<ng-view></ng-view>```.
+- based on what page we navigate to Angular will fire off the specified ```controller``` and page with ```templateUrl```.
+- We set up the logic in ```.config``` tie it to our view with ```<ng-view></ng-view>```.
 
 
 
